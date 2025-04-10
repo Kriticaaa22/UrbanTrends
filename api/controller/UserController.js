@@ -69,7 +69,7 @@ const loginUser = async (req, res) => {
       if (err) {
         return res.status(500).json({ message: "database error" });
       }
-      if (result.length < 0) {
+      if (result.length === 0) {
         return res.status(400).json({ message: "user not found" });
       }
       const user = result[0];
